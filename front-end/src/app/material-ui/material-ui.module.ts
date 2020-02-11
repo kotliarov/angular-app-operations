@@ -9,7 +9,11 @@ import {
          MatButtonModule,
          MatCardModule,
          MatDialogModule,
-         MatTooltipModule
+         MatTooltipModule,
+         MatFormFieldModule,
+         MatDatepickerModule,
+         MatSelectModule,
+         MatNativeDateModule
          } from "@angular/material";
 
 
@@ -24,7 +28,11 @@ import {
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule
   ],
   exports: [
     MatInputModule,
@@ -36,6 +44,10 @@ import {
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
-    MatTooltipModule  ]
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule  ]
 })
 export class MaterialUiModule { }
