@@ -1,0 +1,26 @@
+<div class="mat-elevation-z8">
+  <div class="spinner-container" *ngIf="loading$ | async">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ test.name }}</mat-card-title>
+      <mat-card-subtitle>{{ test.accession }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+     <dt>Num samples:</dt> <dd>{{ test.num_samples }}</dd>
+     <dt>Sample:</dt> <dd>{{ test.sample.name }}</dd>
+     <dt>Lab</dt> <dd>{{ test.lab.name }}</dd>
+     <dt>Ship date:</dt> <dd>{{ test.ship_date | date }}</dd>
+     <dt>Test date:</dt> <dd>{{ test.test_date | date }}</dd>
+     <dt>Review date:</dt> <dd>{{ test.review_date | date }}</dd>
+     <dt>Status:</dt> <dd>{{ test.status }}</dd>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-icon-button color="primary" (click)="onBack()" matTooltip="Back to Tests"><mat-icon>arrow_back</mat-icon></a>
+      <a mat-icon-button color="primary" (click)="onEdit()" matTooltip="Edit"><mat-icon>edit</mat-icon></a>
+      <a mat-icon-button color="primary" (click)="onDelete()" matTooltip="Delete"><mat-icon>delete</mat-icon></a>
+    </mat-card-actions>
+  </mat-card>
+</div>

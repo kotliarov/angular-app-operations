@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<p>Hello</p>
+<app-root> </app-root>
+
+  <script src="{% static 'front-end/runtime-es5.js' %}" nomodule defer></script>
+  <script src="{% static 'front-end/polyfills-es5.js' %}"  nomodule defer></script>
+  <script src="{% static 'front-end/styles-es5.js' %}"  nomodule defer></script>
+  <script src="{% static 'front-end/vendor-es5.js' %}"  nomodule defer></script>
+  <script src="{% static 'front-end/main-es5.js' %}"  nomodule defer></script>
+
+  <script src="{% static 'front-end/runtime-es2015.js' %}" type="module"></script>
+  <script src="{% static 'front-end/polyfills-es2015.js' %}" type="module"></script>
+  <script src="{% static 'front-end/styles-es2015.js' %}" type="module"></script>
+  <script src="{% static 'front-end/vendor-es2015.js' %}" type="module"></script>
+  <script src="{% static 'front-end/main-es2015.js' %}" type="module"></script>
+
+{% endblock %}

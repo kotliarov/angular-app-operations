@@ -1,0 +1,17 @@
+{
+  "tests" : [
+    {
+      "id":  1,
+      "accession": "test00001",
+      "num_samples": 2,
+      "ship_date": "2020-01-01",
+      "test_date": "2020-0`-15",
+      "review_date": "",
+      "sample": 1,
+      "lab": 2,
+      "status": "progress",
+      "type": "undefined",
+      "version": 1
+    }
+  ]
+}

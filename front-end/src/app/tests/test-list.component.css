@@ -1,0 +1,28 @@
+.tests {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.tests-table {
+  min-height: 360px;
+  margin-top: 10px;
+}
+
+.spinner-container {
+  height: 360px;
+  width: 390px;
+  position: fixed;
+}
+
+.spinner-container mat-spinner {
+  margin: 130px auto 0 auto;
+}
+
+.controls-band {
+  display: incline-block;
+}
+
+.mat-row:hover {
+  cursor: pointer;
+  background-color: #D3D3D3;
+}

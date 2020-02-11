@@ -1,0 +1,41 @@
+<div class="tests">
+  <div class="spinner-container" *ngIf="dataSource.loading$ | async">
+    <mat-spinner></mat-spinner>
+  </div>
+  <mat-table class="tests-table mat-elevation-z8" [dataSource]="dataSource" matSort matSortActive="accession" matSortDirection="asc" matSortDisableClear>
+    <ng-container matColumnDef="accession">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Accession</mat-header-cell>
+      <mat-cell *matCellDef="let test">{{ test.accession }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="num_samples">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Num Samples</mat-header-cell>
+      <mat-cell *matCellDef="let test">{{ test.num_samples }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sample">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Samples</mat-header-cell>
+      <mat-cell *matCellDef="let test">{{ test.sample }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lab">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Lab</mat-header-cell>
+      <mat-cell *matCellDef="let test">{{ test.lab }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Lab</mat-header-cell>
+      <mat-cell *matCellDef="let test">{{ test.status }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns" (click)="onDetail(row)"></mat-row>
+  </mat-table>
+
+  <div class="row mt-3">
+    <div class="col-md-4 d-flex flex-row">
+      <a mat-icon-button color="primary" [routerLink]="['/tests/add']" matTooltip="New Test"><mat-icon>add</mat-icon></a>
+    </div>
+  <mat-paginator class="col-md-8" [length]="dataSource.resultsLength$ | async" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
+  </div>
+</div>

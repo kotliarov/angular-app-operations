@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Edit Test document</mat-card-title>
+  </mat-card-header>
+
+    <mat-card-content>
+        <form [formGroup]="docForm" (ngsubmit)="onSubmit()">
+
+          <fieldset class="form-group">
+            <label for="num_samples">Accession</label>
+            <input class="form-control"
+              type="text"
+              formControlName="accession" />
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label for="num_samples">Samples</label>
+            <input class="form-control" type="number" formControlName="num_samples">
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label for="ship_date">Shipment date</label>
+            <input class="form-control"  type="date" formControlName="ship_date">
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label for="test_date" >Test date</label>
+            <input class="form-control"  type="date" formControlName="test_date">
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label for="ship_date" >Review date</label>
+            <input class="form-control"  type="date" formControlName="review_date">
+          </fieldset>
+
+          <button class="btn btn-primary" [disabled]="!docForm.valid"> Submit</button>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+    <!-- put buttons here -->
+    </mat-card-actions>
+</mat-card>
+

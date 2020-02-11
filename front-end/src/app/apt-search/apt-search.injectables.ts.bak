@@ -1,0 +1,11 @@
+import {
+ AptSearchService,
+ APT_API_KEY,
+ APT_API_URL
+} from './apt-search.service';
+
+export const aptSearchInjectables: Array<any> = [
+  {provide: AptSearchService, useClass: AptSearchService},
+  {provide: APT_API_KEY, useValue: APT_API_KEY},
+  {provide: APT_API_URL, useValue: APT_API_URL}
+];
