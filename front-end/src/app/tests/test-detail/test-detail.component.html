@@ -3,7 +3,7 @@
     <mat-spinner></mat-spinner>
   </div>
 
-  <mat-card>
+  <mat-card *ngIf="test$ | async as test">
     <mat-card-header>
       <mat-card-title>{{ test.name }}</mat-card-title>
       <mat-card-subtitle>{{ test.accession }}</mat-card-subtitle>

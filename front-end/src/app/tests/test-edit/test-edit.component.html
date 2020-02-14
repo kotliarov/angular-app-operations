@@ -75,7 +75,8 @@
           </mat-form-field>
           
           <div class="form-element">
-            <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Submit Form</button>
+            <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Save</button>
+            <button mat-raised-button color="primary" class="button ml-1" (click)="onCancel()">Cancel</button>
           </div>
         </form>
     </mat-card-content>

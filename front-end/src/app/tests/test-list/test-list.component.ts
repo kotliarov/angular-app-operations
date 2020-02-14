@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Test } from './test.model';
-import { AptService } from '../services/apt.service';
+import { Test } from '../test.model';
+import { AptService } from '../../services/apt.service';
 import { debounceTime, distinctUntilChanged, startWith, tap, delay} from 'rxjs/operators';
 import { merge, fromEvent }  from 'rxjs';
-import { TestsDataSource } from '../services/tests.datasource';
+import { TestsDataSource } from '../../services/tests.datasource';
 
 @Component({
   selector: 'app-tests',
@@ -46,6 +46,6 @@ export class TestListComponent implements OnInit, AfterViewInit {
 
   onDetail(item: Test): void {
     console.log(item);
-    this.router.navigate(['tests', item.id])
+    this.router.navigate(['/tests', item.id])
   }
 }

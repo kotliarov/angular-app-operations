@@ -55,6 +55,7 @@ export class TestEditComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private api: AptService) { }
 
   ngOnInit() {
+    console.log(this.route);
     this.getDetails(this.route.snapshot.params['id']);
   }
 
