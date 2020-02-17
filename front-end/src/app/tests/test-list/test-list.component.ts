@@ -46,6 +46,11 @@ export class TestListComponent implements OnInit, AfterViewInit {
 
   onDetail(item: Test): void {
     console.log(item);
-    this.router.navigate(['/tests', item.id])
+    this.router.navigate(['/tests', item.id]);
+  }
+
+  onNew(): void {
+    console.log('onNew');
+    this.router.navigate(['/tests/add']);
   }
 }

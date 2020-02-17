@@ -77,5 +77,16 @@ export class TestEditComponent implements OnInit {
     );
   }
 
+  save() {
+    if (this.formGroup.invalid) {
+      return;
+    }
+    //this.api.saveTest(this.doc).subscribe(res => {this.router.navigate(['/tests'])})
+    this.router.navigate(['/tests']);
+  }
+
+  cancel() {
+    this.router.navigate(['/tests']);
+  }
 }
 //https://stackblitz.com/edit/example-angular-material-reactive-form?file=app%2Fapp.component.html

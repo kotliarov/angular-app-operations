@@ -1247,6 +1247,19 @@
       "status": "progress",
       "type": "undefined",
       "version": 1
+    },
+    {
+      "id": 101,
+      "accession": "",
+      "num_samples": 1,
+      "ship_date": "2020-02-17T05:30:19.367Z",
+      "test_date": "2020-02-17T05:30:19.367Z",
+      "review_date": "2020-02-17T05:30:19.367Z",
+      "sample": null,
+      "lab": null,
+      "status": null,
+      "type": null,
+      "version": 0
     }
   ]
 }

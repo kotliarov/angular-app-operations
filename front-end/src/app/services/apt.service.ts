@@ -27,8 +27,16 @@ export class AptService
     return this.http.get<Test>(`/api/tests/${id}`);
   }
 
-  deleteTest(doc: Test): Observable<Test>
+  deleteTest(doc: Test): Observable<any>
   {
     return this.http.delete<Test>(`/api/tests/${doc.id}?_version=${doc.version}`);
+  }
+
+  saveTest(doc: Test): Observable<any> {
+    return this.http.put<Test>('/api/tests/${doc.id}', doc)
+  }
+
+  newTest(doc: Test): Observable<any> {
+    return this.http.post<Test>('/api/tests', doc);
   }
 }

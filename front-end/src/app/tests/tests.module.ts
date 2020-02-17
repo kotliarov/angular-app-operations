@@ -9,13 +9,17 @@ import { TestDetailComponent } from './test-detail/test-detail.component';
 import { TestEditComponent } from './test-edit/test-edit.component';
 import { TestNewComponent } from './test-new/test-new.component';
 import { TestsRoutingModule } from './tests-routing.module';
+import { TestMainComponent } from './test-main/test-main.component';
+import { TestFormComponent } from './test-form/test-form.component';
 
 @NgModule({
   declarations: [
     TestListComponent,
     TestDetailComponent,
     TestEditComponent,
-    TestNewComponent
+    TestNewComponent,
+    TestMainComponent,
+    TestFormComponent
   ],
   imports: [
     CommonModule,
