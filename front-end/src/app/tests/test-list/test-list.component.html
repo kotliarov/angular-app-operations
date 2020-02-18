@@ -5,7 +5,9 @@
   <mat-table class="tests-table" [dataSource]="dataSource" matSort matSortActive="accession" matSortDirection="asc" matSortDisableClear>
     <ng-container matColumnDef="accession">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Accession</mat-header-cell>
-      <mat-cell *matCellDef="let test">{{ test.accession }}</mat-cell>
+      <mat-cell *matCellDef="let test">
+        <a mat-icon-button (click)='onDetail(test)' matTooltip="Delete" color="primary">{{ test.accession }}</a>
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="num_samples">
@@ -28,8 +30,22 @@
       <mat-cell *matCellDef="let test">{{ test.status }}</mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="edit">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let test">
+                <a mat-icon-button  (click)='onEdit(test)' matTooltip="Edit" color="primary"><mat-icon>edit</mat-icon></a>
+            </mat-cell>
+        </ng-container>
+
+    <ng-container matColumnDef="delete">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let test">
+                <a mat-icon-button (click)='onDelete(test)' matTooltip="Delete" color="primary"><mat-icon>delete</mat-icon></a>
+            </mat-cell>
+        </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns" (click)="onDetail(row)"></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
 
   <div class="row mt-3">

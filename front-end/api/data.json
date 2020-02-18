@@ -7,7 +7,7 @@
       "ship_date": "2020-08-02T21:29:57.508Z",
       "test_date": "2020-04-12T16:26:30.377Z",
       "review_date": "2021-01-30T16:12:23.445Z",
-      "sample": 1,
+      "sampleId": 1,
       "lab": 2,
       "status": "progress",
       "type": "undefined",
@@ -59,19 +59,6 @@
       "ship_date": "2021-01-15T21:14:58.297Z",
       "test_date": "2020-04-26T15:41:58.551Z",
       "review_date": "2020-04-07T07:47:13.846Z",
-      "sample": 1,
-      "lab": 2,
-      "status": "progress",
-      "type": "undefined",
-      "version": 1
-    },
-    {
-      "id": 10,
-      "accession": "Antarctica (the territory South of 60 deg S)",
-      "num_samples": 90750,
-      "ship_date": "2021-01-23T21:32:13.056Z",
-      "test_date": "2020-06-25T11:11:12.684Z",
-      "review_date": "2020-05-08T14:41:03.668Z",
       "sample": 1,
       "lab": 2,
       "status": "progress",
@@ -384,19 +371,6 @@
       "ship_date": "2021-02-03T01:41:26.356Z",
       "test_date": "2020-06-30T01:43:47.423Z",
       "review_date": "2020-06-05T08:51:10.126Z",
-      "sample": 1,
-      "lab": 2,
-      "status": "progress",
-      "type": "undefined",
-      "version": 1
-    },
-    {
-      "id": 35,
-      "accession": "Alaska",
-      "num_samples": 50204,
-      "ship_date": "2021-01-13T04:15:46.030Z",
-      "test_date": "2020-03-21T05:21:40.674Z",
-      "review_date": "2020-12-19T07:24:57.141Z",
       "sample": 1,
       "lab": 2,
       "status": "progress",
@@ -1247,19 +1221,40 @@
       "status": "progress",
       "type": "undefined",
       "version": 1
+    }
+  ],
+  "samples": [
+    {
+      "id": 1,
+      "description": "Sample A",
+      "storage_temp_hi": 40,
+      "storage_temp_lo": 20,
+      "lot_number": "abc",
+      "live": true,
+      "sample_typeId": 1,
+      "version": 1
     },
     {
-      "id": 101,
-      "accession": "",
-      "num_samples": 1,
-      "ship_date": "2020-02-17T05:30:19.367Z",
-      "test_date": "2020-02-17T05:30:19.367Z",
-      "review_date": "2020-02-17T05:30:19.367Z",
-      "sample": null,
-      "lab": null,
-      "status": null,
-      "type": null,
-      "version": 0
+      "id": 2,
+      "description": "Sample B",
+      "storage_temp_hi": 40,
+      "storage_temp_lo": 20,
+      "lot_number": "abc",
+      "live": true,
+      "sample_typeId": 2,
+      "version": 1
+    }
+  ],
+  "sample_types": [
+    {
+      "id": 1,
+      "description": "Sample Type A",
+      "version": 1
+    },
+    {
+      "id": 2,
+      "description": "Sample Type B",
+      "version": 1
     }
   ]
 }

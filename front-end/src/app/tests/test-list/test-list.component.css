@@ -23,6 +23,6 @@
 }
 
 .mat-row:hover {
-  cursor: pointer;
+  /*cursor: pointer;*/
   background-color: #D3D3D3;
 }

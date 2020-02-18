@@ -8,6 +8,9 @@ import { AptService } from '../../services/apt.service';
 import { debounceTime, distinctUntilChanged, startWith, tap, delay} from 'rxjs/operators';
 import { merge, fromEvent }  from 'rxjs';
 import { TestsDataSource } from '../../services/tests.datasource';
+import {ConfirmDialogModel, ConfirmDialogComponent} from '../../confirm-dialog/confirm-dialog.component';
+import { MatDialog } from '@angular/material';
+
 
 @Component({
   selector: 'app-tests',
@@ -18,13 +21,20 @@ export class TestListComponent implements OnInit, AfterViewInit {
 
   dataSource: TestsDataSource;
 
-  displayedColumns = ['accession', 'num_samples', 'sample', 'lab'];
+  displayedColumns: string[] = [
+      'accession',
+      'num_samples',
+      'sample',
+      'lab',
+      'edit',
+      'delete'
+   ];
 
   @ViewChild(MatPaginator, { static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false}) sort: MatSort;
 
 
-  constructor(private aptService: AptService, private router: Router) {
+  constructor(private aptService: AptService, private router: Router, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -46,11 +56,31 @@ export class TestListComponent implements OnInit, AfterViewInit {
 
   onDetail(item: Test): void {
     console.log(item);
-    this.router.navigate(['/tests', item.id]);
+    this.router.navigate(['tests', item.id]);
   }
 
   onNew(): void {
     console.log('onNew');
-    this.router.navigate(['/tests/add']);
+    this.router.navigate(['tests/add']);
+  }
+
+  onEdit(doc: Test): void {
+    this.router.navigate([`tests/${doc.id}/edit`])
+  }
+
+  onDelete(doc: Test): void {
+    const message = `Proceed with removal of ${doc.accession} Test?`;
+    const dialogData = new ConfirmDialogModel("Confirm Delete", message);
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {maxWidth: "400px", data: dialogData});
+    dialogRef.afterClosed().subscribe((result: boolean) => {
+      if (result) {
+            this.aptService.deleteTest(doc)
+                    .subscribe(
+                      (data: any) => {
+                       this.loadTestsPage();
+                    });
+      }
+    });
+
   }
 }
