@@ -1,0 +1,7 @@
+Django==3.0.3
+djangorestframework>=3.10.0
+djangorestframework-xml==1.4.0
+djangorestframework-jwt
+markdown==3.0.0
+django-filter==1.0.1
+six>=1.10.0
